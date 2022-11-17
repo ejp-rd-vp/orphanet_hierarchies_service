@@ -22,12 +22,6 @@ ex:
 
 {classif} : specify 1 to n Orphanet classifications ID to traverse (optional. Without, return results from all classifications)
 
-Supported Classifications list:
-/ClassifTraversal/hierarchies/list
-
-http://155.133.131.171:8080/ClassifTraversal/hierarchies/list
-
-
 
 ### Set of examples
 Endpoint:
@@ -35,6 +29,8 @@ Endpoint:
 
 Supported Classifications list:
 /ClassifTraversal/hierarchies/list
+http://155.133.131.171:8080/ClassifTraversal/hierarchies/list
+
 
 ex: ORPHAcode 558 (Marfan syndrome)
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=http://www.orpha.net/ORDO/Orphanet_558
