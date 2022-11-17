@@ -25,6 +25,9 @@ ex:
 Supported Classifications list:
 /ClassifTraversal/hierarchies/list
 
+http://155.133.131.171:8080/ClassifTraversal/hierarchies/list
+
+
 
 ### Set of examples
 Endpoint:
