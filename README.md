@@ -41,13 +41,16 @@ http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&class
 
 (Marfan Syndrome starting node, 2 classifications used)
 
+
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&way=down
 
 (Marfan Syndrome starting node, way down)
 
+
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&way=up
 
 (Marfan Syndrome starting node, all the ascendants of the specified Code.)
+
 
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&way=up&level=3&classif=199&classif=189
 
