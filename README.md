@@ -9,7 +9,8 @@ This service help to navigate from an ORPHAcode throught the levels of classific
 
 ### API parameters
 {ORPHAcode} : an ORPHAcode of a clinical entities as a node to start with (Mandatory)
-IRI or code are accepted. 
+IRI or code are accepted.
+
 ex:
 /traverse?code=http://www.orpha.net/ORDO/Orphanet_558 
 /traverse?code=558
