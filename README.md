@@ -35,18 +35,23 @@ Supported Classifications list:
 
 ex: ORPHAcode 558 (Marfan syndrome)
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=http://www.orpha.net/ORDO/Orphanet_558
+
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558
 
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&classif=199&classif=189
+
 (Marfan Syndrome starting node, 2 classifications used)
 
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&way=down
+
 (Marfan Syndrome starting node, way down)
 
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&way=up
+
 (Marfan Syndrome starting node, all the ascendants of the specified Code.)
 
 http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&way=up&level=3&classif=199&classif=189
+
 (Marfan Syndrome starting node, way up to 3 level max, through 2 classification
 
 
