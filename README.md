@@ -13,6 +13,7 @@ IRI or code are accepted.
 
 ex:
 /traverse?code=http://www.orpha.net/ORDO/Orphanet_558 
+
 /traverse?code=558
 
 {way} : from the node, path to levels. Expected 'up' (to "parents"), 'down' (to "childs") (optional. Without, retrieve +1/-1 from node)
