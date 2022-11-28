@@ -8,48 +8,53 @@ A clinical entity (group of diseases, disorder or subtype), for which an ORPHAco
 This service help to navigate from an ORPHAcode throught the levels of classifications
 
 ### API parameters
-{ORPHAcode} : an ORPHAcode of a clinical entities as a node to start with (Mandatory)
+* {ORPHAcode} : an ORPHAcode of a clinical entities as a node to start with (Mandatory)
+IRI or code are accepted.
 
-{Depth} : level to reach from the ORPHAcode as starting point (optional)
+ex:
+/traverse?code=http://www.orpha.net/ORDO/Orphanet_558 
 
-{path} : from the node, path to levels. Expected 'Ascendant', 'Descendant', 'Inferred'
+/traverse?code=558
 
-Returns: "level" (rank from the ORPHAcode node, optional),"parents" / "childs", "OrphaCode= {value}, Name= "{label of clinical entity}"
+* {way} : from the node, path to levels. Expected 'up' (to "parents"), 'down' (to "childs") (optional. Without, retrieve +1/-1 from node)
+/traverse?code=558&way=down will return for each level, all the descendants of the specified Code
 
-Expected input:
-http://155.133.131.171:8080/Mapper/{path}/{ORPHAcode}/{Depth}
+* {level} : level to reach from the ORPHAcode as starting point (optional. Without, return all available levels)
+
+* {classif} : specify 1 to n Orphanet classifications ID to traverse (optional. Without, return results from all classifications)
+
 
 ### Set of examples
-http://155.133.131.171:8080/Mapper/Inferred/{ORPHAcode}
+* Endpoint:
+[http://155.133.131.171:8080/ClassifTraversal/hierarchies]
 
-ex: ORPHAcode 558 (Marfan syndrome)
-
-[http://155.133.131.171:8080/Mapper/Inferred/558]
-
-return both parents/childs of this ORPHAcode, based on inferrence from ORDO
-
-http://155.133.131.171:8080/Mapper/Ascendant/{ORPHAcode}
-
-[http://155.133.131.171:8080/Mapper/Ascendant/558] 
-
-return all levels of "parents" 
-
-http://155.133.131.171:8080/Mapper/Ascendant/{ORPHAcode}/{level}
-
-[http://155.133.131.171:8080/Mapper/Ascendant/558/2]
-
-return "parents" of the node to level 2 max.
+* Supported Classifications list:
+/ClassifTraversal/hierarchies/list
+http://155.133.131.171:8080/ClassifTraversal/hierarchies/list
 
 
+* ex: ORPHAcode 558 (Marfan syndrome)
+http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=http://www.orpha.net/ORDO/Orphanet_558
 
-http://155.133.131.171:8080/Mapper/Descendant/{ORPHAcode}
+http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558
 
-[http://155.133.131.171:8080/Mapper/Descendant/558] 
+* http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&classif=199&classif=189
 
-return all levels of "Childs" 
+(Marfan Syndrome starting node, 2 classifications used)
 
-http://155.133.131.171:8080/Mapper/Descendant/{ORPHAcode}/{level}
 
-[http://155.133.131.171:8080/Mapper/Descendant/558/2]
+* http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&way=down
 
-return "parents" of the node to level 2 max. (only level 1 is available in that particular case)
+(Marfan Syndrome starting node, way down)
+
+
+* http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&way=up
+
+(Marfan Syndrome starting node, all the ascendants of the specified Code.)
+
+
+* http://155.133.131.171:8080/ClassifTraversal/hierarchies/traverse?code=558&way=up&level=3&classif=199&classif=189
+
+(Marfan Syndrome starting node, way up to 3 level max, through 2 classification
+
+
